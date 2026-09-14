@@ -12,4 +12,10 @@
     </p>
     <a href="{{ route('abouts') }}">About</a>
     <a href="{{ route('blogs') }}">blog</a>
+    @foreach ($blogs as $item)
+        <h2>{{ $item->title }}</h2>
+        <div>{{ Str::limit(strip_tags($item->content), 100) }}</div>
+        <a href="/detail/{{ $item->id }}">อ่านเพิ่มเติม</a>
+        <hr>
+    @endforeach
 @endsection

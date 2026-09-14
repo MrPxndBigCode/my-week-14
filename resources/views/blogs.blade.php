@@ -25,13 +25,13 @@
                         <td>
 
                             @if ($item->status)
-                                <a href="/change/{{ $item->id }}" class="btn btn-success">เผยแพร่</a>
+                                <a href="{{ route('change', $item->id) }}" class="btn btn-success">เผยแพร่</a>
                             @else
-                                <a href="/change/{{ $item->id }}" class="btn btn-danger">ฉบับร่าง</a>
+                                <a href="{{ route('change', $item->id) }}" class="btn btn-danger">ฉบับร่าง</a>
                             @endif
                         </td>
                         <td><a href="{{ route('edit', $item->id) }}" class="btn btn-warning">แก้ไข</a></td>
-                        <td><a onclick="return confirm('คุณต้องการลบข้อมูลนี้หรือไม่?')" href="/delete/{{ $item->id }}"
+                        <td><a onclick="return confirm('คุณต้องการลบข้อมูลนี้หรือไม่?')" href="{{ route('delete', $item->id) }}"
                                 class="btn btn-danger">ลบ</a></td>
                 @endforeach
             </tbody>

@@ -27,9 +27,11 @@ class AdminController extends Controller
     }
 
     function form(){
-
         return view("form");
+    }
 
+    function create(){
+        return view("form");
     }
 
     function insert(Request $request)
@@ -47,7 +49,7 @@ class AdminController extends Controller
             'content'=> $request->content
         ];
         blog::insert($data);
-        return redirect('/blogs');
+        return redirect()->route('blogs');
     }
 
     function delete($id){
@@ -66,7 +68,7 @@ class AdminController extends Controller
         }
         
         blog::find($id)->update($data);
-        return redirect()->back();https://github.com/MrPxndBigCode/week-13.git
+        return redirect()->back();
     }
     function edit($id)
     {
@@ -87,7 +89,7 @@ class AdminController extends Controller
         $data=['title'=> $request->title,'content'=> $request->content];
         
         blog::find($id)->update($data);
-        return redirect('/blogs');
+        return redirect()->route('blogs');
     }
 
 }

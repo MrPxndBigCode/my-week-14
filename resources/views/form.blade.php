@@ -5,7 +5,7 @@
 @section('content')
 
     <h2 class="text-center">เขียนบทความ</h2>
-    <form method="post" action="/form/insert">
+    <form method="post" action="{{ route('insert') }}">
         @csrf
         <div class="form-group">
             <label for="title">ชื่อบทความ</label>
@@ -26,7 +26,7 @@
         @enderror
 
         <input onclick="return confirm('คุณต้องการเพิ่มข้อมูลนี้หรือไม่?')" type="submit" class="btn btn-primary my-3">
-        <a href="/blogs" class="btn btn-secondary">บทความทั้งหมด</a>
+        <a href="{{ route('blogs') }}" class="btn btn-secondary">บทความทั้งหมด</a>
     </form>
 
 @endsection
